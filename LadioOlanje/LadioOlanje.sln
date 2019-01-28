@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadioOlanje", "LadioOlanje\LadioOlanje.csproj", "{B0D84F8E-ED9A-434C-86D1-FD7DF1C05E9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D84F8E-ED9A-434C-86D1-FD7DF1C05E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D84F8E-ED9A-434C-86D1-FD7DF1C05E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D84F8E-ED9A-434C-86D1-FD7DF1C05E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D84F8E-ED9A-434C-86D1-FD7DF1C05E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD1AD7A5-8459-42C2-9A0F-39E75E6E2B56}
+	EndGlobalSection
+EndGlobal
