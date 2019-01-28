@@ -38,8 +38,9 @@
             this.randomizeButton = new System.Windows.Forms.Button();
             this.loopTrackButton = new System.Windows.Forms.Button();
             this.loopListButton = new System.Windows.Forms.Button();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            this.mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // tracksListBox
@@ -49,7 +50,7 @@
             this.tracksListBox.FormattingEnabled = true;
             this.tracksListBox.Location = new System.Drawing.Point(12, 87);
             this.tracksListBox.Name = "tracksListBox";
-            this.tracksListBox.Size = new System.Drawing.Size(224, 173);
+            this.tracksListBox.Size = new System.Drawing.Size(238, 173);
             this.tracksListBox.TabIndex = 0;
             // 
             // label1
@@ -83,7 +84,7 @@
             // 
             // removeTrackButton
             // 
-            this.removeTrackButton.Location = new System.Drawing.Point(211, 27);
+            this.removeTrackButton.Location = new System.Drawing.Point(123, 27);
             this.removeTrackButton.Name = "removeTrackButton";
             this.removeTrackButton.Size = new System.Drawing.Size(25, 25);
             this.removeTrackButton.TabIndex = 4;
@@ -93,7 +94,7 @@
             // 
             // removeListButton
             // 
-            this.removeListButton.Location = new System.Drawing.Point(211, 56);
+            this.removeListButton.Location = new System.Drawing.Point(123, 56);
             this.removeListButton.Name = "removeListButton";
             this.removeListButton.Size = new System.Drawing.Size(25, 25);
             this.removeListButton.TabIndex = 4;
@@ -104,7 +105,7 @@
             // randomizeButton
             // 
             this.randomizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.randomizeButton.Location = new System.Drawing.Point(87, 272);
+            this.randomizeButton.Location = new System.Drawing.Point(90, 266);
             this.randomizeButton.Name = "randomizeButton";
             this.randomizeButton.Size = new System.Drawing.Size(75, 23);
             this.randomizeButton.TabIndex = 5;
@@ -115,7 +116,7 @@
             // loopTrackButton
             // 
             this.loopTrackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loopTrackButton.Location = new System.Drawing.Point(49, 301);
+            this.loopTrackButton.Location = new System.Drawing.Point(52, 295);
             this.loopTrackButton.Name = "loopTrackButton";
             this.loopTrackButton.Size = new System.Drawing.Size(75, 23);
             this.loopTrackButton.TabIndex = 6;
@@ -126,7 +127,7 @@
             // loopListButton
             // 
             this.loopListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loopListButton.Location = new System.Drawing.Point(130, 301);
+            this.loopListButton.Location = new System.Drawing.Point(133, 295);
             this.loopListButton.Name = "loopListButton";
             this.loopListButton.Size = new System.Drawing.Size(75, 23);
             this.loopListButton.TabIndex = 7;
@@ -134,24 +135,35 @@
             this.loopListButton.UseVisualStyleBackColor = true;
             this.loopListButton.Click += new System.EventHandler(this.loopListButton_Click);
             // 
-            // axWindowsMediaPlayer1
+            // mediaPlayer
             // 
-            this.axWindowsMediaPlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.mediaPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(268, 29);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(355, 295);
-            this.axWindowsMediaPlayer1.TabIndex = 8;
+            this.mediaPlayer.Enabled = true;
+            this.mediaPlayer.Location = new System.Drawing.Point(268, 29);
+            this.mediaPlayer.Name = "mediaPlayer";
+            this.mediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaPlayer.OcxState")));
+            this.mediaPlayer.Size = new System.Drawing.Size(355, 295);
+            this.mediaPlayer.TabIndex = 8;
+            this.mediaPlayer.Enter += new System.EventHandler(this.mediaPlayer_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(164, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Play";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 336);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.mediaPlayer);
             this.Controls.Add(this.loopListButton);
             this.Controls.Add(this.loopTrackButton);
             this.Controls.Add(this.randomizeButton);
@@ -164,7 +176,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Ladio Olanje";
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +193,8 @@
         private System.Windows.Forms.Button randomizeButton;
         private System.Windows.Forms.Button loopTrackButton;
         private System.Windows.Forms.Button loopListButton;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
+        private System.Windows.Forms.Button button1;
     }
 }
 
