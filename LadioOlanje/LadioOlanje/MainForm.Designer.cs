@@ -44,10 +44,12 @@
             // 
             // tracksListBox
             // 
+            this.tracksListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tracksListBox.FormattingEnabled = true;
             this.tracksListBox.Location = new System.Drawing.Point(12, 87);
             this.tracksListBox.Name = "tracksListBox";
-            this.tracksListBox.Size = new System.Drawing.Size(156, 173);
+            this.tracksListBox.Size = new System.Drawing.Size(224, 173);
             this.tracksListBox.TabIndex = 0;
             // 
             // label1
@@ -63,79 +65,92 @@
             // 
             this.insertTrackButton.Location = new System.Drawing.Point(12, 27);
             this.insertTrackButton.Name = "insertTrackButton";
-            this.insertTrackButton.Size = new System.Drawing.Size(75, 25);
+            this.insertTrackButton.Size = new System.Drawing.Size(105, 25);
             this.insertTrackButton.TabIndex = 2;
             this.insertTrackButton.Text = "Insert Track";
             this.insertTrackButton.UseVisualStyleBackColor = true;
+            this.insertTrackButton.Click += new System.EventHandler(this.insertTrackButton_Click);
             // 
             // insertListButton
             // 
             this.insertListButton.Location = new System.Drawing.Point(12, 56);
             this.insertListButton.Name = "insertListButton";
-            this.insertListButton.Size = new System.Drawing.Size(75, 25);
+            this.insertListButton.Size = new System.Drawing.Size(105, 25);
             this.insertListButton.TabIndex = 3;
             this.insertListButton.Text = "Insert List";
             this.insertListButton.UseVisualStyleBackColor = true;
+            this.insertListButton.Click += new System.EventHandler(this.insertListButton_Click);
             // 
             // removeTrackButton
             // 
-            this.removeTrackButton.Location = new System.Drawing.Point(143, 27);
+            this.removeTrackButton.Location = new System.Drawing.Point(211, 27);
             this.removeTrackButton.Name = "removeTrackButton";
             this.removeTrackButton.Size = new System.Drawing.Size(25, 25);
             this.removeTrackButton.TabIndex = 4;
             this.removeTrackButton.Text = "-";
             this.removeTrackButton.UseVisualStyleBackColor = true;
+            this.removeTrackButton.Click += new System.EventHandler(this.removeTrackButton_Click);
             // 
             // removeListButton
             // 
-            this.removeListButton.Location = new System.Drawing.Point(143, 56);
+            this.removeListButton.Location = new System.Drawing.Point(211, 56);
             this.removeListButton.Name = "removeListButton";
             this.removeListButton.Size = new System.Drawing.Size(25, 25);
             this.removeListButton.TabIndex = 4;
             this.removeListButton.Text = "-";
             this.removeListButton.UseVisualStyleBackColor = true;
+            this.removeListButton.Click += new System.EventHandler(this.removeListButton_Click);
             // 
             // randomizeButton
             // 
-            this.randomizeButton.Location = new System.Drawing.Point(50, 266);
+            this.randomizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.randomizeButton.Location = new System.Drawing.Point(87, 272);
             this.randomizeButton.Name = "randomizeButton";
             this.randomizeButton.Size = new System.Drawing.Size(75, 23);
             this.randomizeButton.TabIndex = 5;
             this.randomizeButton.Text = "Randomize";
             this.randomizeButton.UseVisualStyleBackColor = true;
+            this.randomizeButton.Click += new System.EventHandler(this.randomizeButton_Click);
             // 
             // loopTrackButton
             // 
-            this.loopTrackButton.Location = new System.Drawing.Point(12, 295);
+            this.loopTrackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.loopTrackButton.Location = new System.Drawing.Point(49, 301);
             this.loopTrackButton.Name = "loopTrackButton";
             this.loopTrackButton.Size = new System.Drawing.Size(75, 23);
             this.loopTrackButton.TabIndex = 6;
             this.loopTrackButton.Text = "Loop Track";
             this.loopTrackButton.UseVisualStyleBackColor = true;
+            this.loopTrackButton.Click += new System.EventHandler(this.loopTrackButton_Click);
             // 
             // loopListButton
             // 
-            this.loopListButton.Location = new System.Drawing.Point(93, 295);
+            this.loopListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.loopListButton.Location = new System.Drawing.Point(130, 301);
             this.loopListButton.Name = "loopListButton";
             this.loopListButton.Size = new System.Drawing.Size(75, 23);
             this.loopListButton.TabIndex = 7;
             this.loopListButton.Text = "Loop List";
             this.loopListButton.UseVisualStyleBackColor = true;
+            this.loopListButton.Click += new System.EventHandler(this.loopListButton_Click);
             // 
             // axWindowsMediaPlayer1
             // 
+            this.axWindowsMediaPlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(242, 27);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(268, 29);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(364, 291);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(355, 295);
             this.axWindowsMediaPlayer1.TabIndex = 8;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 332);
+            this.ClientSize = new System.Drawing.Size(634, 336);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.loopListButton);
             this.Controls.Add(this.loopTrackButton);

@@ -16,5 +16,40 @@ namespace LadioOlanje
         {
             InitializeComponent();
         }
+
+        private void insertListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void insertTrackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeTrackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void randomizeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loopTrackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loopListButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
