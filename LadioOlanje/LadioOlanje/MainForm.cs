@@ -76,13 +76,15 @@ namespace LadioOlanje
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.ShowDialog();
 
-            string[] tracks = new string[]{dialog.SelectedPath};
+            //int tracksParse = int.Parse(dialog.SelectedPath.Length.ToString());
+
+            string[] tracks = new string[]{int.Parse(dialog.SelectedPath.Length)};
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                for(int i = 0; i < dialog.SelectedPath.Length; i++)
+                for(int i = 0; i < tracks; i++)
                 {
-                    tracksListBox.Items.Add(tracks);
+                    tracksListBox.Items.Add(tracks[i]).ToString();
                 }
             }
         }
