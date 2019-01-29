@@ -74,15 +74,20 @@ namespace LadioOlanje
         private void insertListButton_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.ShowDialog();
-
-            //int tracksParse = int.Parse(dialog.SelectedPath.Length.ToString());
-
-            string[] tracks = new string[]{int.Parse(dialog.SelectedPath.Length)};
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                for(int i = 0; i < tracks; i++)
+                //int tracksParse = int.Parse(dialog.SelectedPath.Length.ToString());
+
+                int[] tracksAsInt = new int[] {
+                    dialog.SelectedPath.Length
+                };
+
+                string[] tracks = new string[] {
+                    tracksAsInt.ToString()
+                };
+
+                for (int i = 0; i < int.Parse(tracks.ToString()); i++)
                 {
                     tracksListBox.Items.Add(tracks[i]).ToString();
                 }
