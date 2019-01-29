@@ -18,91 +18,100 @@ namespace LadioOlanje
             InitializeComponent();
         }
 
-        public class Song
+        public string Path;
+        public string Artist;
+        public string Title;
+
+        public override string ToString()
         {
-            public string Path;
-            public string Artist;
-            public string Title;
+            return string.Format("{0} - {1} ({2})", Artist, Title, Path);
+        }
 
-            public override string ToString()
+        public static bool TryParseSongInfo(string songPath, out string artist, out string title)
+        {
+            byte[] tagBytes = new byte[3];
+            string tag;
+
+
+            FileStream fs = new FileStream(songPath, FileMode.Open);
+
+            fs.Seek(-128, SeekOrigin.End);
+            fs.Read(tagBytes, 0, 3);
+
+
+            tag = System.Text.Encoding.Default.GetString(tagBytes);
+
+            if (tag.ToUpper().Equals("TAG"))
             {
-                return string.Format("{0} - {1} ({2})", Artist, Title, Path);
+                byte[] titleBytes = new byte[30];
+                byte[] artistBytes = new byte[30];
+
+                fs.Read(titleBytes, 0, 30);
+
+                title = System.Text.Encoding.Default.GetString(titleBytes);
+
+                fs.Read(artistBytes, 0, 30);
+
+                artist = System.Text.Encoding.Default.GetString(artistBytes);
+
+                title = title.Replace("\0", "");
+                artist = artist.Replace("\0", "");
+
+                return true;
             }
-
-            public static bool TryParseSongInfo(string songPath, out string artist, out string title)
+            else
             {
-                byte[] tagBytes = new byte[3];
-                string tag;
+                title = "Unknown";
+                artist = "Unknown";
 
-
-                FileStream fs = new FileStream(songPath, FileMode.Open);
-
-                fs.Seek(-128, SeekOrigin.End);
-                fs.Read(tagBytes, 0, 3);
-
-
-                tag = System.Text.Encoding.Default.GetString(tagBytes);
-
-                if (tag.ToUpper().Equals("TAG"))
-                {
-                    byte[] titleBytes = new byte[30];
-                    byte[] artistBytes = new byte[30];
-
-                    fs.Read(titleBytes, 0, 30);
-
-                    title = System.Text.Encoding.Default.GetString(titleBytes);
-
-                    fs.Read(artistBytes, 0, 30);
-
-                    artist = System.Text.Encoding.Default.GetString(artistBytes);
-
-                    title = title.Replace("\0", "");
-                    artist = artist.Replace("\0", "");
-
-                    return true;
-                }
-                else
-                {
-                    title = "Unknown";
-                    artist = "Unknown";
-
-                    return false;
-                }
+                return false;
             }
         }
 
-        private void insertListButton_Click(object sender, EventArgs e)
+            private void insertListButton_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                //int tracksParse = int.Parse(dialog.SelectedPath.Length.ToString());
+                string[] tracks = new string[] { dialog.SelectedPath };
 
-                int[] tracksAsInt = new int[] {
-                    dialog.SelectedPath.Length
-                };
+                
 
-                string[] tracks = new string[] {
-                    tracksAsInt.ToString()
-                };
-
-                for (int i = 0; i < int.Parse(tracks.ToString()); i++)
+                for (int i = 0; i < dialog.SelectedPath.Length; i++)
                 {
-                    tracksListBox.Items.Add(tracks[i]).ToString();
+                    tracksListBox.Items.Add(tracks.ToString());
                 }
             }
+
+            //if (dialog.ShowDialog() == DialogResult.OK)
+            //{
+            //int tracksParse = int.Parse(dialog.SelectedPath.Length.ToString());
+
+            //int[] tracksAsInt = new int[] {
+            //dialog.SelectedPath.Length
+            //};
+
+            //string[] tracks = new string[] {
+            //tracksAsInt.ToString()
+            //};
+
+            //for (int i = 0; i < tracks; i++)
+            //{
+            //tracksListBox.Items.Add(tracks[i]).ToString();
+            //}
+            //}
         }
 
         private void insertTrackButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "MP3 Music files |*.mp3";
-            dialog.ShowDialog();
 
             if(dialog.ShowDialog() == DialogResult.OK)
-            {
-                //tracksListBox.Items.Add();
+            { 
+                
+                tracksListBox.Items.Add(dialog.OpenFile().ToString());
             }
         }
 
