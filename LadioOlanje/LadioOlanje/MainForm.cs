@@ -69,7 +69,7 @@ namespace LadioOlanje
         }
 
         string[] files, paths;
-        string file, path;
+        string[] filesFolderBrowse = Directory.GetFiles(@"C:\\Users\\User\\Music", "*.mp3");
 
         private void insertListButton_Click(object sender, EventArgs e)
         {
@@ -77,31 +77,14 @@ namespace LadioOlanje
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                //files = dialog.SelectedPath;
 
-                for (int i = 0; i < files.Length; i++)
+                //filesFolderBrowse = dialog.
+
+                for (int i = 0; i < filesFolderBrowse.Length; i++)
                 {
-                    tracksListBox.Items.Add(files[i]);
+                    tracksListBox.Items.Add(filesFolderBrowse[i]);
                 }
             }
-
-            //if (dialog.ShowDialog() == DialogResult.OK)
-            //{
-            //int tracksParse = int.Parse(dialog.SelectedPath.Length.ToString());
-
-            //int[] tracksAsInt = new int[] {
-            //dialog.SelectedPath.Length
-            //};
-
-            //string[] tracks = new string[] {
-            //tracksAsInt.ToString()
-            //};
-
-            //for (int i = 0; i < tracks; i++)
-            //{
-            //tracksListBox.Items.Add(tracks[i]).ToString();
-            //}
-            //}
         }
 
         private void insertTrackButton_Click(object sender, EventArgs e)
@@ -114,7 +97,10 @@ namespace LadioOlanje
                 files = dialog.SafeFileNames;
                 paths = dialog.FileNames;
 
-                tracksListBox.Items.Add(files);
+                for(int i = 0; i < files.Length; i++)
+                {
+                    tracksListBox.Items.Add(files[i]);
+                }
             }
         }
 
@@ -153,6 +139,11 @@ namespace LadioOlanje
         }
 
         private void loopListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

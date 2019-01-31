@@ -97,43 +97,47 @@
             // 
             this.removeListButton.Location = new System.Drawing.Point(123, 56);
             this.removeListButton.Name = "removeListButton";
-            this.removeListButton.Size = new System.Drawing.Size(25, 25);
+            this.removeListButton.Size = new System.Drawing.Size(105, 25);
             this.removeListButton.TabIndex = 4;
-            this.removeListButton.Text = "-";
+            this.removeListButton.Text = "Clear List";
             this.removeListButton.UseVisualStyleBackColor = true;
+            this.removeListButton.Visible = false;
             this.removeListButton.Click += new System.EventHandler(this.removeListButton_Click);
             // 
             // randomizeButton
             // 
             this.randomizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.randomizeButton.Location = new System.Drawing.Point(90, 266);
+            this.randomizeButton.Location = new System.Drawing.Point(42, 266);
             this.randomizeButton.Name = "randomizeButton";
             this.randomizeButton.Size = new System.Drawing.Size(75, 23);
             this.randomizeButton.TabIndex = 5;
             this.randomizeButton.Text = "Randomize";
             this.randomizeButton.UseVisualStyleBackColor = true;
+            this.randomizeButton.Visible = false;
             this.randomizeButton.Click += new System.EventHandler(this.randomizeButton_Click);
             // 
             // loopTrackButton
             // 
             this.loopTrackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loopTrackButton.Location = new System.Drawing.Point(52, 295);
+            this.loopTrackButton.Location = new System.Drawing.Point(42, 295);
             this.loopTrackButton.Name = "loopTrackButton";
             this.loopTrackButton.Size = new System.Drawing.Size(75, 23);
             this.loopTrackButton.TabIndex = 6;
             this.loopTrackButton.Text = "Loop Track";
             this.loopTrackButton.UseVisualStyleBackColor = true;
+            this.loopTrackButton.Visible = false;
             this.loopTrackButton.Click += new System.EventHandler(this.loopTrackButton_Click);
             // 
             // loopListButton
             // 
             this.loopListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loopListButton.Location = new System.Drawing.Point(133, 295);
+            this.loopListButton.Location = new System.Drawing.Point(123, 295);
             this.loopListButton.Name = "loopListButton";
             this.loopListButton.Size = new System.Drawing.Size(75, 23);
             this.loopListButton.TabIndex = 7;
             this.loopListButton.Text = "Loop List";
             this.loopListButton.UseVisualStyleBackColor = true;
+            this.loopListButton.Visible = false;
             this.loopListButton.Click += new System.EventHandler(this.loopListButton_Click);
             // 
             // mediaPlayer
@@ -150,7 +154,7 @@
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(164, 40);
+            this.playButton.Location = new System.Drawing.Point(123, 266);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(75, 25);
             this.playButton.TabIndex = 9;
@@ -177,6 +181,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Ladio Olanje";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
