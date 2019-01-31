@@ -65,7 +65,7 @@
             // 
             // insertTrackButton
             // 
-            this.insertTrackButton.Location = new System.Drawing.Point(12, 27);
+            this.insertTrackButton.Location = new System.Drawing.Point(12, 29);
             this.insertTrackButton.Name = "insertTrackButton";
             this.insertTrackButton.Size = new System.Drawing.Size(105, 25);
             this.insertTrackButton.TabIndex = 2;
@@ -81,11 +81,12 @@
             this.insertListButton.TabIndex = 3;
             this.insertListButton.Text = "Insert List";
             this.insertListButton.UseVisualStyleBackColor = true;
+            this.insertListButton.Visible = false;
             this.insertListButton.Click += new System.EventHandler(this.insertListButton_Click);
             // 
             // removeTrackButton
             // 
-            this.removeTrackButton.Location = new System.Drawing.Point(123, 27);
+            this.removeTrackButton.Location = new System.Drawing.Point(123, 29);
             this.removeTrackButton.Name = "removeTrackButton";
             this.removeTrackButton.Size = new System.Drawing.Size(25, 25);
             this.removeTrackButton.TabIndex = 4;
@@ -95,13 +96,12 @@
             // 
             // removeListButton
             // 
-            this.removeListButton.Location = new System.Drawing.Point(123, 56);
+            this.removeListButton.Location = new System.Drawing.Point(12, 56);
             this.removeListButton.Name = "removeListButton";
             this.removeListButton.Size = new System.Drawing.Size(105, 25);
             this.removeListButton.TabIndex = 4;
             this.removeListButton.Text = "Clear List";
             this.removeListButton.UseVisualStyleBackColor = true;
-            this.removeListButton.Visible = false;
             this.removeListButton.Click += new System.EventHandler(this.removeListButton_Click);
             // 
             // randomizeButton
@@ -154,7 +154,7 @@
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(123, 266);
+            this.playButton.Location = new System.Drawing.Point(123, 56);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(75, 25);
             this.playButton.TabIndex = 9;
