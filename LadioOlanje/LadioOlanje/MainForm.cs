@@ -68,17 +68,20 @@ namespace LadioOlanje
             }
         }
 
-        string[] files, paths;
-        string[] filesFolderBrowse = Directory.GetFiles(@"C:\\Users\\User\\Music", "*.mp3");
+        public static FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+        public static OpenFileDialog dialog = new OpenFileDialog();
+
+        public static string[] files, paths;
+        
 
         private void insertListButton_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (folderDialog.ShowDialog() == DialogResult.OK)
             {
 
-                //filesFolderBrowse = dialog.
+                string dir = folderDialog.SelectedPath;
+                string[] filesFolderBrowse = Directory.GetFiles(dir, "*.mp3", SearchOption.AllDirectories);
 
                 for (int i = 0; i < filesFolderBrowse.Length; i++)
                 {
@@ -89,7 +92,6 @@ namespace LadioOlanje
 
         private void insertTrackButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "MP3 Music files |*.mp3";
 
             if(dialog.ShowDialog() == DialogResult.OK)
