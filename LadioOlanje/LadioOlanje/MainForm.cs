@@ -68,19 +68,20 @@ namespace LadioOlanje
             }
         }
 
-            private void insertListButton_Click(object sender, EventArgs e)
+        string[] files, paths;
+        string file, path;
+
+        private void insertListButton_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string[] tracks = new string[] { dialog.SelectedPath };
+                //files = dialog.SelectedPath;
 
-                
-
-                for (int i = 0; i < dialog.SelectedPath.Length; i++)
+                for (int i = 0; i < files.Length; i++)
                 {
-                    tracksListBox.Items.Add(tracks.ToString());
+                    tracksListBox.Items.Add(files[i]);
                 }
             }
 
@@ -109,9 +110,25 @@ namespace LadioOlanje
             dialog.Filter = "MP3 Music files |*.mp3";
 
             if(dialog.ShowDialog() == DialogResult.OK)
-            { 
-                
-                tracksListBox.Items.Add(dialog.OpenFile().ToString());
+            {
+                files = dialog.SafeFileNames;
+                paths = dialog.FileNames;
+
+                tracksListBox.Items.Add(files);
+            }
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                mediaPlayer.URL = paths[tracksListBox.SelectedIndex];
+            }
+
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("bug plz fix ");
             }
         }
 
