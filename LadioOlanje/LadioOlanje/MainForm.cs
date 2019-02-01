@@ -13,10 +13,20 @@ namespace LadioOlanje
 {
     public partial class MainForm : Form
     {
+
+        public static string[] files;
+            string[]  paths = {  };
+        int songCount = 0;
+
+
         public MainForm()
         {
             InitializeComponent();
+            paths = new string[100];
+            
+
         }
+
 
         public string Path;
         public string Artist;
@@ -71,7 +81,7 @@ namespace LadioOlanje
         public static FolderBrowserDialog folderDialog = new FolderBrowserDialog();
         public static OpenFileDialog dialog = new OpenFileDialog();
 
-        public static string[] files, paths;
+
         
 
         private void insertListButton_Click(object sender, EventArgs e)
@@ -86,7 +96,9 @@ namespace LadioOlanje
                 for (int i = 0; i < filesFolderBrowse.Length; i++)
                 {
                     tracksListBox.Items.Add(filesFolderBrowse[i]);
+                    paths[i + songCount] = filesFolderBrowse[i];
                 }
+                songCount += filesFolderBrowse.Length;
             }
         }
 
@@ -97,9 +109,16 @@ namespace LadioOlanje
             if(dialog.ShowDialog() == DialogResult.OK)
             {
                 files = dialog.SafeFileNames;
-                paths = dialog.FileNames;
 
-                for(int i = 0; i < files.Length; i++)
+                
+
+                for(int i = 0; i < dialog.FileNames.Length; i++)
+                {
+                    paths[i + songCount] = dialog.FileNames[i];
+                }
+                songCount += dialog.FileNames.Length;
+
+                for (int i = 0; i < files.Length; i++)
                 {
                     tracksListBox.Items.Add(files[i]);
                 }
