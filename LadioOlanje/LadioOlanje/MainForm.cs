@@ -15,7 +15,7 @@ namespace LadioOlanje
     {
 
         public static string[] files;
-            string[]  paths = {  };
+        string[]  paths = {  };
         int songCount = 0;
 
 
@@ -23,8 +23,6 @@ namespace LadioOlanje
         {
             InitializeComponent();
             paths = new string[100];
-            
-
         }
 
 
@@ -110,11 +108,18 @@ namespace LadioOlanje
             {
                 files = dialog.SafeFileNames;
 
-                
-
-                for(int i = 0; i < dialog.FileNames.Length; i++)
+                for (int i = 0; i < dialog.FileNames.Length; i++)
                 {
                     paths[i + songCount] = dialog.FileNames[i];
+
+                    string artist;
+                    string title;
+                    bool success = TryParseSongInfo(dialog.FileNames[i], out artist, out title);
+
+                    //if (success == true)
+                    //{
+                            //tracksListBox.Items.Add(string.Format("{0} - {1}", artist, title));
+                    //}
                 }
                 songCount += dialog.FileNames.Length;
 
@@ -127,15 +132,14 @@ namespace LadioOlanje
 
         private void playButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 mediaPlayer.URL = paths[tracksListBox.SelectedIndex];
             }
 
-            catch (NullReferenceException)
+            catch (IndexOutOfRangeException)
             {
-                MessageBox.Show("bug plz fix ");
+                MessageBox.Show("Selecteer een lied");
             }
         }
 
