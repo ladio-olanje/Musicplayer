@@ -154,6 +154,7 @@
             // 
             // playButton
             // 
+            this.playButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.playButton.Location = new System.Drawing.Point(123, 266);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(75, 25);
